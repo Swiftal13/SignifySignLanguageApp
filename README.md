@@ -15,3 +15,5 @@ I need to research. -
 - AWS services or google cloud
 - making my own NN
 - figure out the purpose of this program
+
+question generation
