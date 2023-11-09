@@ -1,8 +1,9 @@
 # NEA
 
 NEA ideas, resources, etc
+requirements
 
-Machine learning with tensorflow, kaggle for dataset, and huggingface for the model
+**Machine learning with tensorflow, kaggle for dataset, and huggingface for the model**
 so looking online at school 
 - i can make my own model but i need to train it myself.
 - people say models take long to make up to a few weeks, so i would have to make a designated model by january
@@ -12,7 +13,7 @@ I could use a pretrained made model from hugging face. But whats the point of th
 
 I need to research. - 
 
-- AWS services or google cloud
+**- AWS services or google cloud**
 - making my own NN
 - figure out the purpose of this program
 
