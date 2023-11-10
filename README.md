@@ -18,3 +18,4 @@ I need to research. -
 - figure out the purpose of this program
 
 question generation
+AI exam marker
