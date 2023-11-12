@@ -20,3 +20,4 @@ I need to research. -
 question generation
 AI exam marker
 no coding again today
+graph plan on obsidian
