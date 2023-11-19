@@ -21,3 +21,4 @@ question generation
 AI exam marker
 no coding again today
 graph plan on obsidian
+daniel advice works
