@@ -17,10 +17,7 @@ I need to research. -
 - making my own NN
 - figure out the purpose of this program
 
-question generation
 AI exam marker
-no coding again today
 graph plan on obsidian
-daniel advice works
+aaaa
 
-i have no idea
