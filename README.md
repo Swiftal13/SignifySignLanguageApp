@@ -20,5 +20,5 @@ I need to research. -
 AI exam marker
 graph plan on obsidian
 aaaa
-y
+y9up
 dadad
