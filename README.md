@@ -21,4 +21,5 @@ AI exam marker
 graph plan on obsidian
 aaaa
 y9up
+more robust desktop application
 dadad
