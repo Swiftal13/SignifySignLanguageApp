@@ -21,3 +21,5 @@ AI exam marker
 graph plan on obsidian
 more robust desktop application
 scale tkiutner
+
+its fucking over for me 4 a* notewise
