@@ -22,4 +22,4 @@ graph plan on obsidian
 more robust desktop application
 scale tkiutner
 
-its fucking over for me 4 a* notewise
+it has to solve a problem
