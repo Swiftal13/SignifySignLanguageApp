@@ -22,4 +22,3 @@ graph plan on obsidian
 more robust desktop application
 scale tkiutner
 
-it has to solve a problem
