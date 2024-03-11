@@ -18,4 +18,4 @@ I need to research. -
 - figure out the purpose of this program
 
 AI exam marker
-graph plan on obsidianj
+graph plan on obsidian
