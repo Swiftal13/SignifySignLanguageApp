@@ -11,12 +11,4 @@ so looking online at school
 
 I could use a pretrained made model from hugging face. But whats the point of that, the people there want you to use machine learning neural networks, and make your own.
 
-I need to research. - 
 
-**- AWS services or google cloud**
-- making my own NN
-- figure out the purpose of this program
-
-AI exam marker
-graph plan on obsidian
-ip
