@@ -32,8 +32,9 @@ class Signify(tk.Tk):
         )
         self.cameraLabel.place(relx=0.5, rely=0.5, anchor=tk.CENTER)
 
+
         # Middle Frame
-        self.middleFrame = tk.Frame(self, bg=blue, height=50)
+        self.middleFrame = tk.Frame(self, bg=blue, height=40)
         self.middleFrame.pack(side=tk.TOP, fill=tk.X)
 
         self.wordLabel = tk.Label(
@@ -45,6 +46,7 @@ class Signify(tk.Tk):
         )
         self.wordLabel.place(relx=0.5, rely=0.5, anchor=tk.CENTER)
 
+
         # Bottom Frame
         self.bottomFrame = tk.Frame(self, bg=darkGrey, height=120)
         self.bottomFrame.pack(side=tk.BOTTOM, fill=tk.X)
@@ -54,6 +56,7 @@ class Signify(tk.Tk):
         self.buttonFrame.place(relx=0.5, rely=0.5, anchor=tk.CENTER)
 
         # Buttons
+        # Start Button
         self.startButton = tk.Button(
             self.buttonFrame, 
             text="Start", 
@@ -66,6 +69,7 @@ class Signify(tk.Tk):
         )
         self.startButton.pack(pady=3)
 
+        # Options Button
         self.optionsButton = tk.Button(
             self.buttonFrame, 
             text="Options", 
@@ -78,6 +82,7 @@ class Signify(tk.Tk):
         )
         self.optionsButton.pack(pady=3)
 
+        # Camera Button
         self.cameraButton = tk.Button(
             self.buttonFrame, 
             text="Camera", 
