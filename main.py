@@ -1,8 +1,5 @@
 import tkinter as tk
 from tkinter import *
-import tensorflow as ts
-import numpy as np
-import cv2 as cv
 
 # Colours
 lightGrey = "#D9D9D9"
