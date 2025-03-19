@@ -1,17 +1,19 @@
 import cv2
 
-def start_camera():
-    cap = cv2.VideoCapture(0)  # Open the default camera
-    
-    while True:
-        ret, frame = cap.read()
-        if not ret:
-            break
+class Camera:
+    def __init__(self):
+        self.cap = cv2.VideoCapture(0)
 
-        cv2.imshow("Camera Feed", frame)
+    def getFrame(self):
+        ret, frame = self.cap.read() # Read the frame from the camera
+        if not ret or frame is None:
+            return None
+        frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB) # Convert the frame from BGR to RGB
+        return frame
+        
+    def release(self):
+        self.cap.release() 
+        
 
-        if cv2.waitKey(1) & 0xFF == ord('q'):  # Press 'q' to exit
-            break
 
-    cap.release()
-    cv2.destroyAllWindows()
+        

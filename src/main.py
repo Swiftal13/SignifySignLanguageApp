@@ -1,5 +1,7 @@
 import tkinter as tk
 from tkinter import *
+from PIL import Image, ImageTk
+import modelCapture
 
 # Colours
 lightGrey = "#D9D9D9"
@@ -11,6 +13,9 @@ blue = "#6E6C80"
 font = ("Arabic Transparent", 13)
 fontBold = ("Arabic Transparent", 12, "bold")
 
+
+
+
 class Signify(tk.Tk):
     def __init__(self):
         super().__init__()
@@ -18,6 +23,10 @@ class Signify(tk.Tk):
         self.title("Signify")
         self.geometry("1000x650")
         self.configure(bg=lightGrey)
+
+        self.camera = modelCapture.Camera() # Create camera object
+        self.cameraRunning = False # Flag to track camera state
+        self.cameraUpdateId = None # Store the after callback ID
 
         # Top Frame
         self.topFrame = tk.Frame(self, bg=lightGrey)
@@ -91,19 +100,66 @@ class Signify(tk.Tk):
             fg=lightGrey, 
             width=9, height=1,
             bd=0, highlightthickness=0,
-            command=self.onCamera
+            command=self.toggleCamera
         )
         self.cameraButton.pack(pady=3)
 
+
+    # Button Functions
     def onStart(self):
         print("Start button clicked!")
 
     def onOptions(self):
         print("Options button clicked!")
 
-    def onCamera(self):
-        print("Camera button clicked!")
+    # Camera Functions
+    def updateCamera(self):
+        if not self.cameraRunning:
+            return
+       
+        frame = self.camera.getFrame()
+        if frame is None or frame.size ==0:
+            print("Warming: No frame captured!")
+
+        else:
+            frame = Image.fromarray(frame)
+            frame = frame.resize((1000,500)) # Resize the frame
+            frameTk = ImageTk.PhotoImage(frame) # Convert to Tkinter PhotoImage
+            self.cameraLabel.configure(image=frameTk)
+            self.cameraLabel.image = frameTk
+
+        self.cameraUpdateId = self.after(10, self.updateCamera) # Update every 10ms
+
+    def toggleCamera(self):
+        if not self.cameraRunning:  # If camera is not running
+            self.cameraRunning = True
+            self.updateCamera()  # Resume the update loop
+            print("Camera started")
+        else:
+            self.cameraRunning = False
+            if self.cameraUpdateId is not None:
+                self.after_cancel(self.cameraUpdateId)
+                self.cameraUpdateId = None
+            # Instead of releasing the camera, just clear the display
+            self.cameraLabel.configure(image="")
+            self.cameraLabel.image = None 
+            print("Camera stopped")
+
+
+
+    def closeCamera(self): 
+        self.cameraRunning = False
+        if self.cameraUpdateId is not None:
+            self.after_cancel(self.cameraUpdateId)
+            self.cameraUpdateId = None
+        self.camera.release()
+        self.destroy()
+
+
+
+
 
 if __name__ == "__main__":
     app = Signify()
+    app.protocol("WM_DELETE_WINDOW", app.closeCamera)
     app.mainloop()
